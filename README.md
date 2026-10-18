@@ -157,6 +157,9 @@ Potential future enhancements include:
 - Classroom-level analytics and attendance summaries.
 - A review workflow for uncertain face matches and attendance records.
 
+### Documentation Update
+
+This project is maintained collaboratively.
 ## Contributors and Credits
 
 ### Research and Ideation
