@@ -1,0 +1,108 @@
+Prompt 1: Establish the Project Concept
+I am developing an Edge AI-based classroom attendance system called EdgeClass. Help me build the application incrementally, using local processing wherever possible. The goal is to automate classroom attendance and monitor student attention using a live camera feed.
+First, review the existing project structure and code before making changes. Build on the current implementation instead of unnecessarily rewriting the application from scratch.
+Prompt 2: Implement Live Facial Recognition
+Integrate real-time facial detection and recognition into the classroom camera interface.
+Requirements:
+* Use the existing student database containing student names and photographs.
+* Detect students appearing in the live camera feed.
+* Display a green bounding box around each recognized student.
+* Show the recognized student's name on or near the bounding box.
+* Match detected faces against the existing student database.
+* Process the camera feed locally in the browser wherever possible.
+Ensure that the implementation uses the existing project dependencies and model files where appropriate.
+Prompt 3: Automate Attendance Tracking
+Implement an attendance system that automatically records student presence during a classroom session.
+Requirements:
+* Mark a student as Present when their face is recognized during the session.
+* Mark students who have not been detected as Absent when the attendance report is generated.
+* Associate attendance records with the relevant student IDs and names.
+* Prevent repeated detections of the same student from creating duplicate attendance entries.
+* Ensure the attendance status is reflected correctly in the user interface.
+Investigate and fix any issues that prevent recognized students from being marked present.
+Prompt 4: Detect Student Head Direction
+Extend the facial recognition system to estimate whether each student is facing the front of the classroom.
+Requirements:
+* Estimate the direction of each detected student's head.
+* Identify students who appear to be looking away from the front.
+* Track the accumulated time each student spends facing away from the front during the session.
+* Display the relevant status in the interface.
+* Associate the observations with the correct recognized student.
+Treat head direction as an estimate based on visual information, rather than claiming to measure a student's actual attention or understanding.
+Prompt 5: Improve Recognition Accuracy and Reliability
+Review the existing facial recognition implementation and improve its reliability.
+Requirements:
+* Ensure that all reasonably visible students can be detected and matched against the database.
+* Investigate cases where students are visible but are not marked present.
+* Improve the handling of multiple faces in a single camera frame.
+* Avoid assigning a student's identity when the recognition confidence is insufficient.
+* Verify that the attendance logic works consistently across an entire session.
+Explain any limitations caused by camera quality, lighting, face angles, model accuracy, or browser performance.
+Prompt 6: Keep Processing Local and Minimize External Dependencies
+Configure EdgeClass to perform facial detection and recognition locally in the browser wherever possible.
+Requirements:
+* Use the existing face-recognition library and locally available model files.
+* Explain whether any external API keys are required.
+* Avoid introducing paid APIs or unnecessary cloud services.
+* Keep student photographs and recognition processing on the local system where the existing architecture permits.
+* Identify any dependencies that must be installed and any model files that must be present.
+Provide complete, compatible code changes and clear setup instructions.
+Prompt 7: Generate Attendance Reports as PDF Files
+Add an attendance reporting feature that allows the user to generate and download a PDF report after a classroom session.
+The report should include:
+* Student ID and name.
+* Attendance status: Present or Absent.
+* Total time spent facing away from the front, where available.
+* Session information, including the date and relevant session details.
+* A clear, readable layout suitable for record keeping.
+Use the existing project structure and an appropriate PDF-generation library. Ensure that the downloaded report reflects the actual session data rather than placeholder information.
+Prompt 8: Add New Students Using the Webcam
+Create an Add a New Student feature that allows users to register students directly through the application.
+Requirements:
+* Provide an input field for the student's name.
+* Allow the user to capture the student's photograph directly using the webcam.
+* Do not require the user to select an existing image from their device.
+* Generate student IDs sequentially using the format STU001, STU002, STU003, and so on.
+* Save the new student's information and captured image using the existing local persistence approach.
+* Make newly registered students available for subsequent facial recognition and attendance sessions.
+* Validate the input and handle camera-permission or capture errors appropriately.
+Keep the implementation compatible with the current application architecture.
+Prompt 9: Preserve the Existing Local Storage Approach
+Continue using the existing local storage and persistence setup for newly added students.
+Do not introduce a backend or change the application to write new student records into students.json and a separate photographs folder as part of this implementation. Leave that part unchanged.
+Ensure that newly registered students remain available for subsequent use through the existing browser-side persistence mechanism.
+Prompt 10: Improve the Main Dashboard Layout
+Redesign the main EdgeClass dashboard to make the interface more organized and practical.
+Required layout:
+* Place the Live Classroom Camera section on the left.
+* Place the Add a New Student section beside it on the right.
+* Position the Attendance Report section below both sections.
+* Use a responsive layout that adapts to different screen sizes.
+* Maintain consistent spacing, alignment, panel sizing, and typography.
+* Preserve all existing functionality, including facial recognition, attendance tracking, student registration, and PDF export.
+Review the current JSX structure and CSS before making changes. Identify and fix any global styles that interfere with the intended layout.
+Prompt 11: Diagnose and Fix the Layout
+The dashboard layout is not displaying as intended. Debug the existing implementation rather than making assumptions about the cause.
+Inspect:
+* The component structure in App.jsx.
+* The layout rules in App.css.
+* The global styles in index.css.
+* Grid or flexbox settings, container widths, margins, padding, and responsive breakpoints.
+* Any default styles from the Vite starter template that may override the application layout.
+Make the smallest reliable changes needed to achieve the intended arrangement: the live camera and student registration panels side by side, with the attendance report underneath.
+Provide the complete corrected files and explain where each file belongs in the project.
+Prompt 12: Final Integration and Verification
+Review the complete EdgeClass application and verify that the main features work together.
+Check that:
+1. The webcam starts and displays the live feed.
+2. Faces are detected and recognized against the student database.
+3. Recognized students are marked present correctly.
+4. Students not detected are listed as absent in the final report.
+5. Head-direction estimates and accumulated time are recorded where available.
+6. New students can be registered using a webcam photograph.
+7. Sequential student IDs are generated correctly.
+8. Newly registered students remain available through the existing local persistence mechanism.
+9. Attendance reports can be exported as PDF files.
+10. The dashboard displays the camera and registration panels side by side, with the report below them.
+Preserve existing working functionality, resolve integration issues, and provide clear instructions for running and testing the application locally.
+

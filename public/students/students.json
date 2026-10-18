@@ -1,0 +1,17 @@
+[
+  {
+    "id": "STU001",
+    "name": "ansh",
+    "photo": "/students/photos/ansh.jpg"
+  },
+  {
+    "id": "STU002",
+    "name": "jasmeet",
+    "photo": "/students/photos/jasmeet.jpg"
+  },
+  {
+    "id": "STU003",
+    "name": "ketan",
+    "photo": "/students/photos/ketan.jpg"
+  }
+]
